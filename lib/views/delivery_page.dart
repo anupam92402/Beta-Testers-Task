@@ -11,17 +11,16 @@ class DeliveryPage extends StatefulWidget {
 class _DeliveryPageState extends State<DeliveryPage> {
   @override
   Widget build(BuildContext context) {
-    List<bool> isSelected = [false, false];
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Marked as Delivered',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.w400),
         ),
         centerTitle: true,
-        actions: [
+        actions: const [
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8.0),
             child: Icon(
               Icons.notifications_none_outlined,
               color: Colors.white,
@@ -31,30 +30,30 @@ class _DeliveryPageState extends State<DeliveryPage> {
         backgroundColor: Colors.blue,
       ),
       body: ListView(
-        padding: EdgeInsets.symmetric(horizontal: 18, vertical: 16),
+        padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 16),
         children: [
-          Text(
+          const Text(
             'Numbers Of Cans User Returned :',
             style: TextStyle(
                 color: Colors.black, fontSize: 18, fontWeight: FontWeight.w500),
           ),
-          SizedBox(
-            height: 12,
+          const SizedBox(
+            height: 16,
           ),
           waterCanQuantity(
               text: '\u2022   Bisleri Water Can', color: Colors.blue),
-          SizedBox(
+          const SizedBox(
             height: 12,
           ),
           waterCanQuantity(
               text: '\u2022   Aquafina Water Can', color: Colors.blue),
-          SizedBox(
-            height: 12,
+          const SizedBox(
+            height: 16,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
+              const Text(
                 'Amount Received in Cash',
                 style: TextStyle(
                     color: Colors.black,
@@ -62,7 +61,8 @@ class _DeliveryPageState extends State<DeliveryPage> {
                     fontWeight: FontWeight.w400),
               ),
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
                 decoration: BoxDecoration(
                   border: Border.all(
                     color: Colors.grey,
@@ -70,7 +70,7 @@ class _DeliveryPageState extends State<DeliveryPage> {
                   ),
                   borderRadius: BorderRadius.circular(2),
                 ),
-                child: Text(
+                child: const Text(
                   '\u{20B9} 500',
                   style: TextStyle(
                     fontSize: 14,
@@ -80,10 +80,10 @@ class _DeliveryPageState extends State<DeliveryPage> {
               )
             ],
           ),
-          SizedBox(
-            height: 16,
+          const SizedBox(
+            height: 24,
           ),
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
@@ -104,10 +104,10 @@ class _DeliveryPageState extends State<DeliveryPage> {
               )
             ],
           ),
-          SizedBox(
-            height: 16,
+          const SizedBox(
+            height: 24,
           ),
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
@@ -129,18 +129,18 @@ class _DeliveryPageState extends State<DeliveryPage> {
               ),
             ],
           ),
-          SizedBox(
-            height: 12,
-          ),
-          quantityRow(brand: 'RO'),
-          SizedBox(
-            height: 12,
-          ),
-          quantityRow(brand: 'Bisleri'),
-          SizedBox(
+          const SizedBox(
             height: 16,
           ),
-          Row(
+          quantityRow(brand: 'RO'),
+          const SizedBox(
+            height: 18,
+          ),
+          quantityRow(brand: 'Bisleri'),
+          const SizedBox(
+            height: 24,
+          ),
+          const Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
@@ -161,11 +161,11 @@ class _DeliveryPageState extends State<DeliveryPage> {
               )
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 12,
           ),
           Container(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
             decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(4),
@@ -174,10 +174,10 @@ class _DeliveryPageState extends State<DeliveryPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 waterCanQuantity(text: 'Delivery Floor', color: Colors.black),
-                SizedBox(
+                const SizedBox(
                   height: 8,
                 ),
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
@@ -199,20 +199,20 @@ class _DeliveryPageState extends State<DeliveryPage> {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 8,
                 ),
-                Text(
+                const Text(
                   '(\u{20B9} 5 per floor)',
                   style: TextStyle(
                       color: Colors.black,
                       fontSize: 12,
                       fontWeight: FontWeight.w400),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 8,
                 ),
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
@@ -237,10 +237,10 @@ class _DeliveryPageState extends State<DeliveryPage> {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 12,
           ),
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
@@ -256,12 +256,38 @@ class _DeliveryPageState extends State<DeliveryPage> {
                   SizedBox(
                     width: 18,
                   ),
-                  CircleButton('COD', Colors.red),
+                  CircleButton('COD', Colors.grey),
                 ],
               )
             ],
           ),
-          SizedBox(
+          const SizedBox(
+            height: 12,
+          ),
+          const Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Icon(
+                Icons.qr_code,
+                color: Colors.blue,
+              ),
+              SizedBox(
+                width: 8,
+              ),
+              Text(
+                'Show Payment QR',
+                style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.blue,
+                    fontWeight: FontWeight.bold),
+              ),
+              Icon(
+                Icons.arrow_right_alt,
+                color: Colors.blue,
+              )
+            ],
+          ),
+          const SizedBox(
             height: 12,
           ),
           TextButton(
@@ -272,12 +298,12 @@ class _DeliveryPageState extends State<DeliveryPage> {
                 borderRadius: BorderRadius.circular(4.0), // Border radius of 12
               ),
             ),
-            child: Text(
+            child: const Text(
               'Submit',
               style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold),
+                fontSize: 16,
+                color: Colors.white,
+              ),
             ),
           )
         ],
@@ -305,7 +331,7 @@ class _DeliveryPageState extends State<DeliveryPage> {
           ),
           child: DropdownButtonHideUnderline(
             child: DropdownButton<int>(
-              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 0),
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 0),
               value: Constant.dropDownValue,
               icon: const Icon(Icons.arrow_drop_down),
               items: Constant.items.map((int items) {
@@ -313,7 +339,7 @@ class _DeliveryPageState extends State<DeliveryPage> {
                   value: items,
                   child: Text(
                     items.toString(),
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 14,
                     ),
                   ),
@@ -336,7 +362,7 @@ class CircleButton extends StatelessWidget {
   final String text;
   final Color color;
 
-  CircleButton(this.text, this.color);
+  const CircleButton(this.text, this.color, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -344,7 +370,7 @@ class CircleButton extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Container(
-          padding: EdgeInsets.all(6),
+          padding: const EdgeInsets.all(6),
           decoration: BoxDecoration(
               shape: BoxShape.circle,
               color: color,
@@ -352,7 +378,7 @@ class CircleButton extends StatelessWidget {
         ),
         Text(
           text,
-          style: TextStyle(fontSize: 10),
+          style: const TextStyle(fontSize: 10),
         )
       ],
     );
@@ -365,13 +391,13 @@ Row quantityRow({required String brand}) {
     children: [
       Row(
         children: [
-          Icon(Icons.location_city),
-          SizedBox(
+          const Icon(Icons.location_city),
+          const SizedBox(
             width: 12,
           ),
           Text(
             '$brand Water Can',
-            style: TextStyle(
+            style: const TextStyle(
                 fontSize: 16, color: Colors.blue, fontWeight: FontWeight.bold),
           ),
         ],
@@ -383,12 +409,14 @@ Row quantityRow({required String brand}) {
           border: Border.all(color: Colors.grey, width: 1),
         ),
       ),
-      QuantitySelector()
+      const QuantitySelector()
     ],
   );
 }
 
 class QuantitySelector extends StatefulWidget {
+  const QuantitySelector({super.key});
+
   @override
   _QuantitySelectorState createState() => _QuantitySelectorState();
 }
@@ -414,34 +442,30 @@ class _QuantitySelectorState extends State<QuantitySelector> {
   Widget build(BuildContext context) {
     return Container(
       width: 100,
-      padding: EdgeInsets.symmetric(horizontal: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 10),
       decoration: BoxDecoration(border: Border.all(color: Colors.black)),
       child: Row(
         children: [
           GestureDetector(
             onTap: _decrementQuantity,
-            child: Container(
-              child: Icon(
-                Icons.remove,
-                color: Colors.black,
-                size: 16,
-              ),
+            child: const Icon(
+              Icons.remove,
+              color: Colors.black,
+              size: 16,
             ),
           ),
-          SizedBox(width: 16),
+          const SizedBox(width: 16),
           Text(
             '$_quantity',
-            style: TextStyle(fontSize: 16),
+            style: const TextStyle(fontSize: 16),
           ),
-          SizedBox(width: 16),
+          const SizedBox(width: 16),
           GestureDetector(
             onTap: _incrementQuantity,
-            child: Container(
-              child: Icon(
-                Icons.add,
-                color: Colors.black,
-                size: 16,
-              ),
+            child: const Icon(
+              Icons.add,
+              color: Colors.black,
+              size: 16,
             ),
           ),
         ],
